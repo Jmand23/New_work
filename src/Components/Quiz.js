@@ -11,7 +11,7 @@ const Quiz = () => {
     },
     {
       question: "What is my go-to vacation?",
-      options: ["Beach", "Hill-station", "Rain-forest", "Temple"], // Fixed empty string issue
+      options: ["Beach", "Hill-station", "Rain-forest", "City-break"], // Fixed empty string issue
       answer: "Beach"
     },
     {
