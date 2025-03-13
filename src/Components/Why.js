@@ -11,10 +11,10 @@ const WhyILoveYou = () => {
     "You are my moon in the night sky.",
     "You're so creative and always have the best ideas!"
   ]);
-  
+
   // Store the random reason that stays constant during the page session
   const [randomReason, setRandomReason] = useState('');
-  
+
   const [userReason, setUserReason] = useState('');
   const [message, setMessage] = useState('');
 
@@ -22,14 +22,14 @@ const WhyILoveYou = () => {
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * reasons.length);
     setRandomReason(reasons[randomIndex]);
-  }, [reasons]); // Only run when the component mounts
+  }, []); // This effect only runs once when the component first loads
 
   // Handle new reason submission
   const handleSubmit = () => {
     if (userReason.trim() !== '') {
-      setReasons([...reasons, userReason]);
+      setReasons([...reasons, userReason]); // Add the new reason to the list
       setMessage('Thank you for sharing a reason!');
-      setUserReason('');
+      setUserReason(''); // Clear the input field
     } else {
       setMessage('Please enter a reason before submitting.');
     }
@@ -39,7 +39,7 @@ const WhyILoveYou = () => {
     <div className="why-i-love-you-container">
       <h2>Why I Love You 💖</h2>
       <div className="reason-display">
-        <p>{randomReason}</p>
+        <p>{randomReason}</p> {/* Random reason stays constant until page refresh */}
       </div>
 
       <h3>Share your own reason:</h3>
