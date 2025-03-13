@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Why.css';
 
 const WhyILoveYou = () => {
-  const [reasons, setReasons] = useState([
+  const [reasons] = useState([
     "You always know how to make me laugh!",
     "You're my rock and I can always count on you.",
     "You're the most caring person I know.",
@@ -19,9 +19,8 @@ const WhyILoveYou = () => {
   // Handle new reason submission
   const handleSubmit = () => {
     if (userReason.trim() !== '') {
-      setReasons([...reasons, userReason]);
-      setMessage('Thank you for sharing a reason!');
-      setUserReason('');
+      alert('Thank you for sharing a reason!');
+      setUserReason(''); // Clear the input field
     } else {
       setMessage('Please enter a reason before submitting.');
     }
