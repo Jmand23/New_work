@@ -3,12 +3,13 @@ import "./BirthdayWishes.css";
 
 const BirthdayWishes = () => {
   const messages = [
-    "Happy Birthday! May your day be more fun than your last birthday party!",
+    "Happy Birthday! Here's to a year of adventure, joy, and success!",
     "You're not getting older, you're just becoming a classic!",
-    "Happy Birthday to someone who brightens every room they walk into!",
-    "Wishing you a birthday as beautiful, incredible, and unique as you are!",
+    "May your birthday be filled with sunshine, smiles, laughter, and love!",
+    "Wishing you a day filled with love, joy, and lots of special moments!",
     "May your birthday be filled with laughter, love, and all the things that make you smile!",
-    "On your special day, I wish you endless joy and the best things life has to offer!"
+    "On your special day, I wish you endless joy and the best things life has to offer!",
+    "May your birthday be the start of a year filled with good fortune, great health, and much happiness."
   ];
 
   const [message, setMessage] = useState("");
