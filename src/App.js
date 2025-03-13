@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Quiz from "./Components/Quiz";
 import BirthdayWishes from "./Components/BirthdayWishes";
 import WhyILoveYou from "./Components/Why";
