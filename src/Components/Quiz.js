@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./Quiz.css";
 
 const Quiz = () => {
@@ -51,19 +52,4 @@ const Quiz = () => {
             {questions[currentQuestion].options.map((option, index) => (
               <button key={index} onClick={() => handleAnswer(option)}>
                 {option}
-              </button>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="result">
-          <p>Your Score: {score} / {questions.length}</p>
-          <p>{getResult()}</p>
-          <a href="/quiz" className="link">Try Again</a>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default Quiz;
+              </
