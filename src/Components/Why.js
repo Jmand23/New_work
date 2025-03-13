@@ -27,7 +27,6 @@ const WhyILoveYou = () => {
   // Handle new reason submission
   const handleSubmit = () => {
     if (userReason.trim() !== '') {
-      setReasons([...reasons, userReason]); // Add the new reason to the list
       setMessage('Thank you for sharing a reason!');
       setUserReason(''); // Clear the input field
     } else {
