@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Quiz from "./Components/Quiz";
 import BirthdayWishes from "./Components/BirthdayWishes";
 import WhyILoveYou from "./Components/Why";
@@ -14,16 +14,19 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/wishes" element={<BirthdayWishes />} />
           <Route path="/why" element={<WhyILoveYou />} />
-          <Route path="/" element={
-            <div className="home">
-              <p>Welcome! Choose your fun activity:</p>
-              <a href="/quiz" className="link">Take the Birthday Quiz</a>
-              <br />
-              <a href="/wishes" className="link">Generate Birthday Wishes</a>
-              <br />
-              <a href="/why" className="link">Why I Love You</a>
-            </div>
-          } />
+          <Route
+            path="/"
+            element={
+              <div className="home">
+                <p>Welcome! Choose your fun activity:</p>
+                <Link to="/quiz" className="link">Take the Birthday Quiz</Link>
+                <br />
+                <Link to="/wishes" className="link">Generate Birthday Wishes</Link>
+                <br />
+                <Link to="/why" className="link">Why I Love You</Link>
+              </div>
+            }
+          />
         </Routes>
       </div>
     </Router>
