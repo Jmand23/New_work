@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Why.css';
 
 const WhyILoveYou = () => {
+  // Initialize with default reasons
   const [reasons, setReasons] = useState([
     "You always know how to make me laugh!",
-    "You bring out the best in everyone around you.",
-    "You're the kindest person I've ever met.",
+    "You're my rock and I can always count on you.",
+    "You're the most caring person I know.",
     "Your smile is my favorite thing in the world.",
-    "You have an amazing sense of humor.",
+    "You are my moon in the night sky.",
     "You're so creative and always have the best ideas!"
   ]);
+  
+  // Store the random reason that stays constant during the page session
+  const [randomReason, setRandomReason] = useState('');
+  
   const [userReason, setUserReason] = useState('');
   const [message, setMessage] = useState('');
 
-  // Randomly select a reason
-  const randomReason = reasons[Math.floor(Math.random() * reasons.length)];
+  // Set the random reason only once when the component mounts
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * reasons.length);
+    setRandomReason(reasons[randomIndex]);
+  }, [reasons]); // Only run when the component mounts
 
   // Handle new reason submission
   const handleSubmit = () => {
