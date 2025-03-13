@@ -1,29 +1,32 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 import "./Quiz.css";
 
 const Quiz = () => {
   const questions = [
     {
-      question: "What's my favorite color?",
-      options: ["Red", "Blue", "Green", "Yellow"],
-      answer: "Blue"
+      question: "If I'm lost where would you probably find me?",
+      options: ["Mall", "Cafe", "Library", "Garden"],
+      answer: "Library"
     },
     {
-      question: "When is my birthday?",
-      options: ["January 1", "March 15", "August 22", "December 25"],
-      answer: "March 15"
+      question: "What is my go-to vacation?",
+      options: ["Beach", "Hill-station", "Rain-forest", "Temple"], // Fixed empty string issue
+      answer: "Beach"
     },
     {
       question: "What's my favorite food?",
-      options: ["Pizza", "Sushi", "Burgers", "Pasta"],
-      answer: "Sushi"
+      options: ["Pizza", "Rice-Rasam", "Burgers", "Maggie"],
+      answer: "Maggie"
     }
   ];
 
   const [score, setScore] = useState(0);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [finished, setFinished] = useState(false);
+
+  // Use the useNavigate hook to navigate programmatically
+  const navigate = useNavigate();
 
   const handleAnswer = (selectedAnswer) => {
     if (selectedAnswer === questions[currentQuestion].answer) {
@@ -40,6 +43,14 @@ const Quiz = () => {
     if (score === questions.length) return "You are a true birthday genius!";
     if (score === 0) return "Better luck next time!";
     return "Great job! You know yourself well!";
+  };
+
+  const handleTryAgain = () => {
+    // Redirect to the quiz page when the user clicks "Try Again"
+    setFinished(false);
+    setScore(0);
+    setCurrentQuestion(0);
+    navigate("/quiz");
   };
 
   return (
@@ -60,8 +71,10 @@ const Quiz = () => {
         <div className="result">
           <p>Your Score: {score} / {questions.length}</p>
           <p>{getResult()}</p>
-          {/* Use Link instead of <a> */}
-          <Link to="/quiz" className="link">Try Again</Link>
+          {/* Use a button to trigger the function for retrying */}
+          <button onClick={handleTryAgain} className="link">
+            Try Again
+          </button>
         </div>
       )}
     </div>
