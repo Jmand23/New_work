@@ -52,4 +52,20 @@ const Quiz = () => {
             {questions[currentQuestion].options.map((option, index) => (
               <button key={index} onClick={() => handleAnswer(option)}>
                 {option}
-              </
+              </button>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="result">
+          <p>Your Score: {score} / {questions.length}</p>
+          <p>{getResult()}</p>
+          {/* Use Link instead of <a> */}
+          <Link to="/quiz" className="link">Try Again</Link>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Quiz;
