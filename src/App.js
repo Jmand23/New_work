@@ -1,8 +1,8 @@
 import React from "react";
-import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom"; // HashRouter for GitHub Pages
 import Quiz from "./Components/Quiz";
-import BirthdayWishes from "./Components/BirthdayWishes";
-import WhyILoveYou from "./Components/Why";
+import BirthdayWishes from "./Components/BirthdayWishes"; // Assuming you have this component
+import WhyILoveYou from "./Components/Why"; // Assuming you have this component
 import "./App.css";
 
 function App() {
