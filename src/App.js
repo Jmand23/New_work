@@ -9,8 +9,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-       <h1>🎉 Happiest Birthday my Boo Bear! 🎉</h1>
-        <h3>Still you are my 11:11 wish ✨</h3>
+       <h1>🎉 Happiest Birthday my Boo Bear! 🎉 Still you are my 11:11 wish ✨</h1>
         <Routes>
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/wishes" element={<BirthdayWishes />} />
